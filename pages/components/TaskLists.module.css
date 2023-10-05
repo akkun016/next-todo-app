@@ -1,0 +1,13 @@
+.lists {
+  width: 100%;
+  line-height: 2;
+  list-style: none;
+}
+
+.list {
+  margin-bottom: 10px;
+  padding: 10px;
+  background-color: white;
+  border-left: 4px solid gray;
+  border-radius: 4px;
+}
