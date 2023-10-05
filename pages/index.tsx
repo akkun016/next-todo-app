@@ -1,17 +1,16 @@
 import styles from "../styles/Home.module.css"
-import handler from "./api/tasks"
+import { TaskListsProps } from "./api/types"
 import AddTask from "./components/AddTask"
 import TaskLists from "./components/TaskLists"
+import { GetServerSideProps, NextPage } from "next"
 
-const Home = (tasks) => {
-  console.log(tasks);
-
+const Home: NextPage<TaskListsProps> = ({ tasks }) => {
   return (
     <main className={styles.main}>
       <div className={styles.wrapper}>
       <h1 className={styles.heading}>TodoApp</h1>
       <AddTask />
-      <TaskLists />
+      <TaskLists tasks={tasks}/>
       </div>
     </main>
   )
@@ -19,9 +18,8 @@ const Home = (tasks) => {
 
 export default Home
 
-export const getServerSideProps = async () => {
+export const getServerSideProps: GetServerSideProps = async () => {
   const res = await fetch("http://localhost:3001/tasks");
   const tasks = await res.json();
-
   return { props: { tasks } }
 }

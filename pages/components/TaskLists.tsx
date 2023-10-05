@@ -1,18 +1,16 @@
+import { Task, TaskListsProps } from "../api/types"
 import styles from "./TaskLists.module.css"
 
-const TaskLists = () => {
+const TaskLists = ({ tasks }: TaskListsProps) => {
   return (
     <div>
       <ul className={styles.lists}>
-        <li className={styles.list}>
-          <span>散歩</span>
-        </li>
-        <li className={styles.list}>
-          <span>散歩</span>
-        </li>
-        <li className={styles.list}>
-          <span>散歩</span>
-        </li>
+        {tasks.map((task: Task) => (
+          <li className={styles.list} key={task.id}>
+            <span>{task.text}</span>
+            <button className={styles.delete}>削除</button>
+          </li>
+        ))}
       </ul>
     </div>
   )
