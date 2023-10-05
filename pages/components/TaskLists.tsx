@@ -1,4 +1,4 @@
-import { Task, TaskListsProps } from "../api/types"
+import { Task, TaskListsProps } from "../types"
 import styles from "./TaskLists.module.css"
 
 const TaskLists = ({ tasks }: TaskListsProps) => {

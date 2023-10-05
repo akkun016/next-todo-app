@@ -1,5 +1,5 @@
 import styles from "../styles/Home.module.css"
-import { TaskListsProps } from "./api/types"
+import { TaskListsProps } from "./types"
 import AddTask from "./components/AddTask"
 import TaskLists from "./components/TaskLists"
 import { GetServerSideProps, NextPage } from "next"
