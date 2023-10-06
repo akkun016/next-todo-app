@@ -25,7 +25,7 @@ const Home = ({tasks}: TaskListsProps) => {
 export default Home
 
 export const getServerSideProps: GetServerSideProps<TaskListsProps> = async () => {
-  const res = await fetch("http://localhost:3001/tasks");
+  const res = await fetch("https://vercel-json-server-five.vercel.app/tasks");
   const tasks = await res.json();
   return { props: { tasks } }
 }

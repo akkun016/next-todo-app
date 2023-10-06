@@ -1,7 +1,7 @@
 import { Task } from "@/src/type/types";
 
 export const PostTask =  async (task : Task): Promise<Task> => {
-  const response = await fetch("http://localhost:3001/tasks", {
+  const response = await fetch("https://vercel-json-server-five.vercel.app/tasks", {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -13,7 +13,7 @@ export const PostTask =  async (task : Task): Promise<Task> => {
 }
 
 export const DeleteTask =  async (id: string): Promise<Task> => {
-  const response = await fetch(`http://localhost:3001/tasks/${id}`, {
+  const response = await fetch(`https://vercel-json-server-five.vercel.app/tasks/${id}`, {
     method: 'DELETE',
     headers: {
       'Content-Type': 'application/json',
