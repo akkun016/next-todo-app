@@ -1,4 +1,4 @@
-import { TaskListsProps } from "../type/types"
+import { TaskListsProps } from "../../type/types"
 import List from "./List"
 import styles from "./TaskLists.module.css"
 

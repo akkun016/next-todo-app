@@ -1,9 +1,11 @@
 import { useState, FormEvent } from "react"
+import { useRouter } from "next/navigation";
 import styles from "./AddTask.module.css"
-import { PostTask } from "../api/tasks";
+import { PostTask } from "../../api/tasks";
 import { v4 as uuidv4 } from 'uuid';
 
 const AddTask = () => {
+  const router = useRouter();
   const [taskText, setTaskText] = useState("");
 
   const submitClick = async (e: FormEvent) => {
@@ -12,6 +14,7 @@ const AddTask = () => {
       await PostTask({id: uuidv4(), text: taskText})
 
       setTaskText("")
+      router.refresh();
     } else {
       alert("未入力です");
     }

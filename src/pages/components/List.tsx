@@ -1,14 +1,17 @@
 import styles from "./List.module.css"
-import { DeleteTask } from "../api/tasks"
-import { Task } from "@/src/pages/type/types";
+import { DeleteTask } from "../../api/tasks"
+import { Task } from "@/src/type/types";
+import { useRouter } from "next/navigation";
 
 interface TaskProps {
   task: Task;
 }
 
 const List = ({task}: TaskProps) => {
+  const router = useRouter();
   const deleteClick = async () => {
     await DeleteTask(task.id);
+    router.refresh();
   }
 
   return (

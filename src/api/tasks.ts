@@ -1,4 +1,4 @@
-import { Task } from "@/src/pages/type/types";
+import { Task } from "@/src/type/types";
 
 export const PostTask =  async (task : Task): Promise<Task> => {
   const response = await fetch("http://localhost:3001/tasks", {

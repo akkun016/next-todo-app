@@ -1,6 +1,6 @@
-import { GetServerSideProps, NextPage } from "next"
+import { GetServerSideProps } from "next"
 import styles from "../styles/Home.module.css"
-import { TaskListsProps } from "./type/types"
+import { TaskListsProps } from "../type/types"
 import AddTask from "./components/AddTask"
 import TaskLists from "./components/TaskLists"
 
