@@ -1,7 +1,7 @@
 import { useState, FormEvent } from "react"
 import { useRouter } from "next/navigation";
 import styles from "./AddTask.module.css"
-import { PostTask } from "../api/tasks";
+import { PostTask } from "../../api/tasks";
 import { v4 as uuidv4 } from 'uuid';
 
 const AddTask = () => {
