@@ -7,6 +7,7 @@ import { v4 as uuidv4 } from 'uuid';
 const AddTask = () => {
   const router = useRouter();
   const [taskText, setTaskText] = useState("");
+  const [inputExplanation, setInputExplanation] = useState("");
 
   const submitClick = async (e: FormEvent) => {
     e.preventDefault();
@@ -16,7 +17,7 @@ const AddTask = () => {
       setTaskText("")
       router.refresh();
     } else {
-      alert("未入力です");
+      setInputExplanation("未入力です")
     }
   }
 
@@ -30,6 +31,7 @@ const AddTask = () => {
         }
         value={taskText}
       ></input>
+      <span className={styles.text}>{inputExplanation}</span>
       <button className={styles.btn}>submit</button>
     </form>
   )

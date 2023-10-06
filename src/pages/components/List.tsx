@@ -3,7 +3,7 @@ import { DeleteTask } from "../../api/tasks"
 import { Task } from "@/src/type/types";
 import { useRouter } from "next/navigation";
 
-interface TaskProps {
+type TaskProps = {
   task: Task;
 }
 
