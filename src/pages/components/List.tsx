@@ -1,5 +1,5 @@
 import styles from "./List.module.css"
-import { DeleteTask } from "../../api/tasks"
+import { DeleteTask } from "../api/tasks"
 import { Task } from "@/src/type/types";
 import { useRouter } from "next/navigation";
 
